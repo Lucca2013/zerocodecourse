@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lernen Sie, Spiele zu entwickeln ohne Programmieren zu können!</title>
+    <style>
+         /* Estilo global */
+         body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #000000;
+            color: #fff;
+            padding: 30px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            max-width: 150px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        main {
+            padding: 60px 20px;
+        }
+
+        .course-info {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 18px;
+            line-height: 1.8;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .course-info h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .course-info p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* Estilo para o preço */
+        .price {
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .old-price {
+            font-size: 24px;
+            color: #aaa;
+            text-decoration: line-through;
+        }
+
+        .new-price {
+            font-size: 60px;
+            color: #000000;
+        }
+
+        .vitalicion-text1 {
+            font-size: 35px;
+            /* Reduzi o tamanho aqui */
+            color: #000000;
+            margin: 20px 0;
+        }
+
+        .vitalicion-text2 {
+            font-size: 15px;
+            color: #ffffff;
+            margin: 20px 0;
+        }
+
+        .button {
+            background-color: #000000;
+            color: #fff;
+            font-size: 30px;
+            padding: 15px 65px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 60px;
+            /* Colocando o botão mais para baixo */
+            transition: background-color 0.3s ease;
+        }
+
+        .button2 {
+            background-color: #000000;
+            color: #fff;
+            font-size: 15px;
+            padding: 15px 65px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 0px;
+            /* Colocando o botão mais para baixo */
+            transition: background-color 0.3s ease;
+        }
+
+
+        .button:hover {
+            background-color: #444;
+        }
+
+        .text-acessovitalicio {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-top: 30px;
+        }
+
+        .fundo {
+            background-image: linear-gradient(145deg, #000000, #000000);
+            padding: 6px 18px;
+            border-radius: 100px;
+            letter-spacing: 0.1em;
+            font-size: 0.875rem;
+            color: #fff;
+        }
+
+
+        /* Estilo para a seção de Teste */
+        .test-info,
+        .vitalicio-info-background {
+            flex: 1;
+            padding: 20px;
+            background-color: #ffffff;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            /* Espaçamento entre as divs e o conteúdo abaixo */
+        }
+
+        .test-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .test-description {
+            font-size: 12px;
+            color: #ffffff;
+        }
+
+        .infinity {
+            filter: grayscale(100%);
+        }
+
+        .test-info img,
+        .vitalicio-info-background img {
+            width: 100px;
+            /* Ajustando a largura da imagem para não ultrapassar os limites */
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para a seção Vitalício */
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            /* Adiciona espaço entre os elementos */
+            gap: 20px;
+            background-color: #000000;
+            /* Define o espaçamento entre os elementos */
+        }
+
+        .icons-part {
+            /* Define o fundo da div como preto */
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .icons-part img {
+            display: block;
+            width: 200px;
+            height: auto;
+            filter: grayscale(100%);
+            /* Deixa as imagens em preto e branco */
+        }
+
+        .icons-part2 {
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .icons-part2 img {
+            display: block;
+            width: 200px;
+            height: auto;
+            filter: grayscale(100%);
+            /* Deixa as imagens em preto e branco */
+        }
+
+        .iconspart-text1 {
+            display: block;
+            width: 200px;
+            height: auto;
+            filter: grayscale(100%);
+        }
+
+        .icon-videaulas {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 200px;
+        }
+
+        .contact-form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+
+        .text-icon {
+            font-size: 30px;
+        }
+
+        .entreemcontato-text {
+            font-size: 27px;
+        }
+
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+
+            /* Estilo global */
+            /* Estilo global */
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f7fa;
+                color: #000000;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                line-height: 1.6;
+            }
+
+            header {
+                background-color: #000000;
+                color: #fff;
+                padding: 30px 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .title {
+                font-size: 16px;
+            }
+
+            .text-explication {
+                font-size: 12px;
+            }
+
+            header img {
+                max-width: 150px;
+                margin-bottom: 15px;
+            }
+
+            h1 {
+                font-size: 36px;
+                font-weight: bold;
+                margin-top: 0;
+            }
+
+            main {
+                padding: 60px 20px;
+            }
+
+            .course-info {
+                max-width: 850px;
+                margin: 0 auto;
+                text-align: left;
+                font-size: 18px;
+                line-height: 1.8;
+                background-color: #fff;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                margin-bottom: 40px;
+            }
+
+            .course-info h2 {
+                font-size: 28px;
+                margin-bottom: 20px;
+                font-weight: bold;
+                color: #333;
+                text-align: center;
+            }
+
+            .course-info p {
+                margin-bottom: 20px;
+                color: #555;
+            }
+
+            /* Estilo para o preço */
+            .price {
+                font-size: 32px;
+                font-weight: bold;
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: baseline;
+                gap: 10px;
+            }
+
+            .old-price {
+                font-size: 20px;
+                color: #aaa;
+                text-decoration: line-through;
+            }
+
+            .new-price {
+                font-size: 30px;
+                color: #000000;
+            }
+
+            .vitalicion-text1 {
+                font-size: 35px;
+                /* Reduzi o tamanho aqui */
+                color: #000000;
+                margin: 20px 0;
+            }
+
+            .vitalicion-text2 {
+                font-size: 15px;
+                color: #000000;
+                margin: 20px 0;
+            }
+
+            .button {
+                background-color: #000000;
+                color: #fff;
+                font-size: 10px;
+                padding: 15px 40px;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                text-decoration: none;
+                margin-top: 60px;
+                /* Colocando o botão mais para baixo */
+                transition: background-color 0.3s ease;
+                margin-bottom: 40px;
+            }
+
+
+            .button2 {
+                background-color: #000000;
+                color: #fff;
+                font-size: 15px;
+                padding: 15px 65px;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                text-decoration: none;
+                margin-top: 0px;
+                /* Colocando o botão mais para baixo */
+                transition: background-color 0.3s ease;
+            }
+
+            .select-email {
+                background-color: #000000;
+                color: #fff;
+                font-size: 15px;
+                padding: 4px 20px;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                text-decoration: none;
+                margin-top: 0px;
+                /* Colocando o botão mais para baixo */
+                transition: background-color 0.3s ease;
+            }
+
+            .button:hover {
+                background-color: #444;
+            }
+
+            .text-acessovitalicio {
+                font-size: 24px;
+                font-weight: bold;
+                color: #ffffff;
+                margin-top: 30px;
+            }
+
+            .fundo {
+                background-image: linear-gradient(145deg, #000000, #000000);
+                padding: 6px 18px;
+                border-radius: 100px;
+                letter-spacing: 0.1em;
+                font-size: 0.875rem;
+                color: #fff;
+            }
+
+            .infinity-icon {
+                width: 200px;
+                height: 100;
+                /* Isso garante que a imagem não fique distorcida */
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* Estilo para a seção de Teste */
+            .test-info,
+            .vitalicio-info-background {
+                flex: 1;
+                padding: 20px;
+                background-color: #000000;
+                color: white;
+                text-align: center;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                /* Espaçamento entre as divs e o conteúdo abaixo */
+            }
+
+            .test-text {
+                font-size: 20px;
+                font-weight: bold;
+                color: #ffffff;
+            }
+
+            .test-description {
+                font-size: 12px;
+                color: #ffffff;
+            }
+
+            .test-info img,
+            .vitalicio-info-background img {
+                width: 100px;
+                /* Ajustando a largura da imagem para não ultrapassar os limites */
+                height: 100px;
+                margin-bottom: 20px;
+
+            }
+
+            /* Estilo para a seção Vitalício */
+
+            .container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                /* Adiciona espaço entre os elementos */
+                gap: 20px;
+                background-color: #000000;
+                /* Define o espaçamento entre os elementos */
+            }
+
+            .icons-part {
+                /* Define o fundo da div como preto */
+                padding: 20px;
+                display: contents;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .icons-part img {
+                display: block;
+                width: 200px;
+                height: auto;
+                filter: grayscale(100%);
+                align-items: center;
+                /* Deixa as imagens em preto e branco */
+            }
+
+            .icons-part2 {
+                padding: 20px;
+                display: contents;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .icons-part2 img {
+                display: block;
+                width: 200px;
+                height: auto;
+                filter: grayscale(100%);
+                align-items: center;
+                /* Deixa as imagens em preto e branco */
+            }
+
+            .iconspart-text1 {
+                font-size: 20px;
+            }
+
+            .icon-videaulas {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .contact-form {
+                background-color: #fff;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                max-width: 500px;
+                margin: 0 auto;
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+
+            .contact-form h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+
+            .text-icon {
+                font-size: 30px;
+            }
+
+            .entreemcontato-text {
+                font-size: 27px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.png" alt="Website-Logo">
+        <h1 class="title">Lernen Sie, Spiele zu entwickeln ohne Programmieren zu können!</h1>
+    </header>
+
+    <main>
+        <div class="course-info">
+            <h2>Was Sie lernen werden:</h2>
+
+            <p class="text-explication">Haben Sie schon einmal daran gedacht, Ihr eigenes Spiel zu erstellen, 
+                wussten aber nicht wo Sie anfangen sollen? Dieser Kurs ist genau das Richtige für Sie!</p>
+
+            <p class="text-explication">In unseren Lektionen lernen Sie, wie Sie erstaunliche Spiele entwickeln 
+                können - ganz ohne Programmierkenntnisse. Die von uns verwendete Plattform ist äußerst intuitiv 
+                und ermöglicht selbst Anfängern die schnelle und einfache Spieleentwicklung.</p>
+
+            <p class="text-explication">Der Kurs deckt alles ab - von den Grundlagen wie der Erstellung von 
+                Szenarien und Charakteren bis hin zu fortgeschrittenen Spielmechaniken. Am Ende werden Sie in 
+                der Lage sein, vollständige Spiele für PC und Mobilgeräte zu entwickeln.</p>
+
+            <p class="text-explication">Mit praktischen und leicht verständlichen Beispielen werden Sie 
+                spielend leicht lernen. Egal ob Sie noch nie programmiert haben - dies ist der einfachste 
+                Einstieg in die Welt der Spieleentwicklung!</p>
+        </div>
+
+        <div class="icons-part">
+            <!-- Icons-Bereich bleibt strukturell gleich -->
+            <div class="icon-videaulas">
+                <img src="https://www.aprendaconstruct2.com.br/images/icon-video.png" alt="Video-Lektionen">
+                <p style="font-family: 'Comic Sans MS';" class="text-icon">Erklärte und bearbeitete Video-Lektionen</p>
+            </div>
+            <div class="icon-videaulas">
+                <img src="https://www.aprendaconstruct2.com.br/images/icon-chat.png" alt="Support">
+                <p style="font-family: 'Comic Sans MS';" class="text-icon"><b>Vollständiger Support</b> während des Kurses</p>
+            </div>
+        </div>
+
+        <div class="icons-part2">
+            <div class="icon-videaulas">
+                <img src="https://www.aprendaconstruct2.com.br/images/icon-c2geral.png" alt="Kostenlose Engine">
+                <p style="font-family: 'Comic Sans MS';" class="text-icon">Verwendung der <b>kostenlosen</b> Construct 2-Plattform</p>
+            </div>
+            <div class="icon-videaulas">
+                <img src="https://www.aprendaconstruct2.com.br/images/icon-vc.png" alt="Für Sie gemacht">
+                <p style="font-family: 'Comic Sans MS';" class="text-icon">Hier lernen Sie mit <b>Spaß</b> und <b>Begeisterung</b></p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <img decoding="async" width="100" height="100" 
+                 src="https://oficinaindie.com.br/wp-content/uploads/2024/11/forever_1_-_1_.webp" 
+                 class="infinity" alt="Lebenslanger Zugang">
+            <p class="vitalicion-text1"><b>Kurs mit lebenslangem Zugang!</b></p>
+            <p class="vitalicion-text2"><b>Dauerhafter Zugriff garantiert!</b></p>
+        </div>
+
+        <div class="price">
+            <span class="old-price">19,90 €</span>
+            <span class="new-price">9,90 €</span>
+        </div>
+
+        <a href="https://go.hotmart.com/T98296829G" class="button">Sichern Sie sich Ihren Platz!</a>
+
+        <div class="contact-form">
+            <h1 style="font-family: 'Comic Sans MS';">Kontaktieren Sie uns!</h1>
+            <h3 style="font-family: 'Comic Sans MS';">Bei Fragen senden Sie eine E-Mail an: zerocodecurso@gmail.com</h3>
+        </div>
+    </main>
+</body>
+</html>
