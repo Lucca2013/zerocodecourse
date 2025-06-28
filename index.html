@@ -2,42 +2,8 @@
 <html lang="und">
 <head>
     <meta charset="UTF-8">
-    <title>Redirecionando...</title>
-    <script>
-        // Mapeamento de idiomas específicos para redirecionamento
-        const languageMap = {
-            'pt-BR': './br/index.html',    // Português do Brasil
-            'pt-PT': './br/index.html',    // Português de Portugal
-            'en-US': './en-us/index.html', // Inglês dos EUA
-            'en-GB': './en-us/index.html', // Inglês do Reino Unido
-            'es-ES': './es/index.html',    // Espanhol da Espanha
-            'es-AR': './es/index.html',    // Espanhol da Argentina
-            'de-DE': './german/index.html' // Alemão da Alemanha
-        };
-
-        // Detecta o idioma do navegador
-        const userLang = navigator.language || navigator.userLanguage;
-        let redirectUrl = languageMap[userLang];
-
-        // Caso não haja mapeamento exato, utiliza a detecção com base no prefixo
-        if (!redirectUrl) {
-            if (userLang.startsWith('pt')) {
-                redirectUrl = './br/index.html';
-            } else if (userLang.startsWith('en')) {
-                redirectUrl = './en-us/index.html';
-            } else if (userLang.startsWith('es')) {
-                redirectUrl = './es/index.html';
-            } else if (userLang.startsWith('de')) {
-                redirectUrl = './german/index.html';
-            } else {
-                // Fallback para inglês dos EUA, caso nenhum dos anteriores se aplique
-                redirectUrl = './en-us/index.html';
-            }
-        }
-
-        // Realiza o redirecionamento
-        window.location.href = redirectUrl;
-    </script>
+    <title>redirector...</title>
+    <script src="language redirector.js"></script>
 </head>
 <body>
     <noscript>
